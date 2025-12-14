@@ -1,7 +1,7 @@
 import disnake
 from disnake.ext import commands, tasks
 import aiosqlite
-import random
+import random, os
 import time
 from dotenv import load_dotenv
 
