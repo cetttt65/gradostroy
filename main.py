@@ -3,6 +3,15 @@ from disnake.ext import commands, tasks
 import aiosqlite
 import random
 import time
+from dotenv import load_dotenv
+
+load_dotenv()
+
+TOKEN = os.getenv('DISCORD_TOKEN')
+
+if TOKEN is None:
+    print("Ошибка: Токен DISCORD_TOKEN не найден в переменных окружения.")
+    exit(1)
 
 bot = commands.Bot(command_prefix="!", intents=disnake.Intents.all())
 
@@ -357,5 +366,5 @@ async def show_map(inter, user_id):
 async def on_ready():
     await init_db()
     print(f"Бот запущен как {bot.user}")
-
+    bot.run(TOKEN)
 
