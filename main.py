@@ -366,5 +366,6 @@ async def show_map(inter, user_id):
 async def on_ready():
     await init_db()
     print(f"Бот запущен как {bot.user}")
-    bot.run(TOKEN)
+
+bot.run(TOKEN)
 
